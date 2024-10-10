@@ -1,6 +1,55 @@
 body{
     background-color: var(--back-color);
 }
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 65px;
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25252e;
+    z-index: 999;
+}
+
+.header-logo img{
+    width: 65px;
+}
+
+.header-menu{
+    margin: 24px;
+    cursor: pointer;
+}
+
+.header-menu i{
+    font-size: 3rem;
+    color: var(--primary-color);
+    transition: 0.6s ease-in;
+}
+
+.header-holder{
+    display: none;
+    position: fixed;
+    top: 65px;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    overflow: auto;
+    background-color: #25252e;
+    z-index: 999;
+}
+
+.header-holder.active{
+    display: block;
+}
+
+.header-holder .container-nav-menu{
+    padding: 50px 30px 50px 50px;
+}
+
 .container{
     display: flex;
     justify-content: space-between;
@@ -47,11 +96,13 @@ body{
 
 .container-left{
     width: 80%;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .container-left-info{
     display: flex;
-    margin-bottom: 100px;
+    padding-top: 100px;
 }
 
 .container-info-col2{
@@ -59,7 +110,7 @@ body{
 }
 
 .container-info-content{
-    padding: 50px 100px 0 100px;
+    padding: 0 100px;
     color: var(--primary-color);
 }
 
@@ -130,12 +181,13 @@ body{
 }
 
 .container-left-wrapper{
+    padding-top: 100px;
     margin-bottom: 100px;
 }
 
 .container-left-skills{
     display: flex;
-    padding-top: 50px;
+    margin-bottom: 50px;
 }
 
 .container-left-skills-photo{
@@ -165,8 +217,10 @@ body{
 }
 
 .container-left-timeline{
+    scroll-margin-top: 100px;
     position: relative;
-    padding-top: 50px;
+    margin-bottom: 100px;
+    display: flow-root;
 }
 
 .container-left-timeline::before{
@@ -222,18 +276,18 @@ body{
 
 .challenge-line-left,.challenge-line-right{
     position: absolute;
-    width: 30px;
+    width: 24px;
     height: 3px;
     top: calc(50% - 1px);
     background-color: var(--primary-color);
 }
 
 .challenge-line-left{
-    right: -42px;
+    right: -34px;
 }
 
 .challenge-line-right{
-    left: -42px;
+    left: -34px;
 }
 
 .container-timeline-challenge:hover::after, .container-timeline-challenge:hover:nth-child(2n){
@@ -254,6 +308,7 @@ body{
 .container-challenge-wrapper-name{
     font-size: 1.6rem;
     margin-bottom: 24px;
+    line-height: 1.6;
 }
 
 .container-challenge-wrapper-link{
@@ -264,5 +319,45 @@ body{
 }
 
 .footer{
-    margin-bottom: 200px;
+    padding: 50px 0;
+    color: var(--primary-color);
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-color: #fff;
+}
+
+.footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 100px;
+}
+
+.footer-info{
+    width: 30%;
+    padding-left: 0;
+}
+
+.footer-info-center li{
+    margin-bottom: 12px;
+}
+
+.footer-info-center li i, .footer-info-right li i{
+    font-size: 1.6rem;
+    margin-right: 12px;
+}
+
+.footer-info-center li span{
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+.footer-info-header{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    margin-bottom: 24px;
+}
+
+.footer-info-right-ul{
+    display: flex;
+    padding: 0;
 }

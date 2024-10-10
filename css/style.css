@@ -15,6 +15,10 @@ a{
     text-decoration: none;
     color: var(--primary-color);
 }
+li{
+    list-style: none;
+}
+
 .col-2{
     width: 50%;
 }

@@ -1,0 +1,59 @@
+
+/* tablet < 1024px */
+@media only screen and (max-width:64em){
+    .header{
+        display: flex;
+    }
+    .container-left{
+        width: 100%;
+    }
+    .container-right{
+        display: none;
+    }
+}
+
+/* tablet < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width:64em){
+    
+}
+
+/* Tablet mini: < 768px */
+@media only screen and (min-width: 46.25em) and (max-width:64em){
+    .container-challenge-wrapper-link{
+        display: block;
+    }
+    .container-challenge-wrapper-link div{
+        margin-top: 12px;
+        text-align: end;
+    }
+}
+
+/* mobile < 740px */
+
+@media only screen and (max-width: 46.25em){
+    .container-left-info{
+        display: block;
+    }
+    .container-info-col2{
+        width: 100%;
+    }
+    .container-info-content{
+        padding-left: 24px;
+    }
+    .container-left-skills{
+        display: block;
+    }
+    .container-left-skills-photo{
+        width: 100%;
+        height: auto;
+    }
+    .container-timeline-challenge{
+        width: calc(100% - 35px);
+    }
+    .container-timeline-challenge:nth-child(2n){
+        margin-left: 0;
+    }
+    .container-timeline-challenge:nth-child(2n)::before{
+        
+    }
+}

@@ -13,6 +13,22 @@
     <title>TT1</title>
 </head>
 <body>
+    <div class="header">
+        <div class="header-logo">
+            <img src="/imgs/logo.png" alt="anhloi">
+        </div>
+        <div class="header-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="header-holder">
+        <ul class="container-nav-menu">
+            <li class="nav-menu-li"><a href="#container-left-info">Giới thiệu</a></li>
+            <li class="nav-menu-li"><a href="#container-left-wrapper">Các kĩ năng mong muốn</a></li>
+            <li class="nav-menu-li"><a href="#container-left-timeline">Thử thách</a></li>
+            <li class="nav-menu-li"><a href="#footer">Thông tin thêm</a></li>
+        </ul>
+    </div>
     <div class="container container-width">
         <div class="container-left">
             <div id="container-left-info" class="container-left-info">
@@ -108,8 +124,6 @@
             <!-- Timeline -->
             <div id="container-left-timeline" class="container-left-timeline">
             </div>
-            <div class="footer">
-            </div>
         </div>
         <div class="container-right">
             <div class="container-right-logo">
@@ -120,11 +134,46 @@
                     <li class="nav-menu-li"><a href="#container-left-info">Giới thiệu</a></li>
                     <li class="nav-menu-li"><a href="#container-left-wrapper">Các kĩ năng mong muốn</a></li>
                     <li class="nav-menu-li"><a href="#container-left-timeline">Thử thách</a></li>
-                    <li class="nav-menu-li"><a href="#">Thông tin thêm</a></li>
+                    <li class="nav-menu-li"><a href="#footer">Thông tin thêm</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <script src="./javascripts/timeline.js"></script>
+    <div id="footer" class="footer container-width">
+        <div class="footer-wrapper">
+            <div class="footer-info-left footer-info">
+                <div class="footer-info-header">Logo</div>
+                <div class="footer-info-content"></div>
+            </div>
+            <ul class="footer-info-center footer-info">
+                <div class="footer-info-header">Contact</div>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Ngõ 7 Tôn Thất Thuyết, Dịch Vọng, Cầu Giấy, Hà Nội</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0364449140</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>vanhieuzat2003@gmail.com</span>
+                </li>
+            </ul>
+            <div class="footer-info-right footer-info">
+                <div class="footer-info-header">Follows us</div>
+                <ul class="footer-info-right-ul">
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-google"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-github"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./javascripts/render.js"></script>
+    <script src="./javascripts/menu.js"></script>
 </body>
 </html>
