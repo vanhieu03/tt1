@@ -1,28 +1,28 @@
-
 /* tablet < 1024px */
-@media only screen and (max-width:64em){
-    .header{
+@media only screen and (max-width:64em) {
+    .header {
         display: flex;
     }
-    .container-left{
+
+    .container-left {
         width: 100%;
     }
-    .container-right{
+
+    .container-right {
         display: none;
     }
 }
 
 /* tablet < 1024px */
-@media only screen and (min-width: 46.25em) and (max-width:64em){
-    
-}
+@media only screen and (min-width: 46.25em) and (max-width:64em) {}
 
 /* Tablet mini: < 768px */
-@media only screen and (min-width: 46.25em) and (max-width:64em){
-    .container-challenge-wrapper-link{
+@media only screen and (min-width: 46.25em) and (max-width:64em) {
+    .container-challenge-wrapper-link {
         display: block;
     }
-    .container-challenge-wrapper-link div{
+
+    .container-challenge-wrapper-link div {
         margin-top: 12px;
         text-align: end;
     }
@@ -30,30 +30,67 @@
 
 /* mobile < 740px */
 
-@media only screen and (max-width: 46.25em){
-    .container-left-info{
+@media only screen and (max-width: 46.25em) {
+    .container-left-info {
         display: block;
     }
-    .container-info-col2{
+
+    .container-info-col2 {
         width: 100%;
     }
-    .container-info-content{
+
+    .container-info-wrapper {
+        padding-right: 0;
+    }
+
+    .container-info-content {
         padding-left: 24px;
     }
-    .container-left-skills{
+
+    .container-left-skills {
         display: block;
     }
-    .container-left-skills-photo{
+
+    .container-left-skills-photo {
         width: 100%;
         height: auto;
     }
-    .container-timeline-challenge{
+
+    .container-timeline-challenge {
         width: calc(100% - 35px);
     }
-    .container-timeline-challenge:nth-child(2n){
+
+    .container-timeline-challenge:nth-child(2n) {
         margin-left: 0;
     }
-    .container-timeline-challenge:nth-child(2n)::before{
-        
+
+    .container-left-timeline::before {
+        left: 100%;
+    }
+
+    .container-timeline-challenge:nth-child(2n)::before,
+    .container-timeline-challenge:nth-child(2n):after {
+        top: 50%;
+        transform: translate(50%, -50%);
+        right: 0;
+        left: auto;
+    }
+
+    .container-timeline-challenge:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .challenge-line-right {
+        left: auto;
+        right: -34px;
+    }
+
+    .footer-wrapper {
+        display: block;
+    }
+
+    .footer-info {
+        width: 100%;
+        margin-bottom: 36px;
     }
 }

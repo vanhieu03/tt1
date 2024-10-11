@@ -35,7 +35,7 @@ body{
     position: fixed;
     top: 65px;
     right: 0;
-    width: 300px;
+    width: 260px;
     height: 100%;
     overflow: auto;
     background-color: #25252e;
@@ -84,16 +84,12 @@ body{
 }
 
 .nav-menu-li{
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     font-weight: 500;
     text-transform: uppercase;
     list-style: none;
     color: var(--primary-color);
 }
-.nav-menu-li a:hover{
-    color: var(--hover-color);
-}
-
 .container-left{
     width: 80%;
     margin-left: 12px;
@@ -119,7 +115,7 @@ body{
 }
 
 .container-info-wrapper{
-    padding-top: 50px;
+    padding-top: 24px;
     padding-right: 50px;
     color: var(--primary-color);
     font-size: 1.6rem;
@@ -191,8 +187,8 @@ body{
 }
 
 .container-left-skills-photo{
-    width: 650px;
-    height: 650px;
+    flex: 0 0 65%;
+    height: 380px;
 }
 
 .container-skills-photo-img{
@@ -207,13 +203,21 @@ body{
     color: var(--primary-color);
 }
 .container-skills-content-header{
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 600;
 }
 .container-skills-content-des{
     font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.loadMore{
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .container-left-timeline{
@@ -352,7 +356,7 @@ body{
 }
 
 .footer-info-header{
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-transform: capitalize;
     margin-bottom: 24px;
 }
@@ -360,4 +364,10 @@ body{
 .footer-info-right-ul{
     display: flex;
     padding: 0;
+}
+
+.footer-info-content a{
+    display: block;
+    margin-bottom: 24px;
+    font-size: 1.4rem;
 }
