@@ -47,7 +47,7 @@
         padding-left: 24px;
     }
 
-    .container-left-skills {
+    .container-left-skills.show{
         display: block;
     }
 

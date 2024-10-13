@@ -16,3 +16,25 @@ hoverUnderline.forEach(element=>{
         element.classList.add('active')
     })
 })
+
+
+window.addEventListener('scroll', () =>{
+    const sections = document.querySelectorAll('div[id]');
+    let currentSection = ''
+    sections.forEach(section =>{
+        const sectionTop = section.offsetTop
+        
+        if(scrollY >= sectionTop){
+            currentSection = section.getAttribute('id')
+        }
+        const links = document.querySelectorAll(`a`)
+        links.forEach(link =>{
+            link.classList.remove('active')
+            if(link.getAttribute('href') === `#${currentSection}`){
+                link.classList.add('active')
+            }
+        })
+    })
+    
+    
+})

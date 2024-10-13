@@ -46,7 +46,7 @@ li {
     width: 0;
     height: 3px;
     background-color: #6db363;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in;
 }
 
 .hover_underline:hover::after {

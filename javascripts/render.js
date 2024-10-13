@@ -159,20 +159,22 @@ containerLeftWrapper.appendChild(loadMore)
 
 const containerLeftSkillElement = [...document.querySelectorAll('.container-left-skills')]
 containerLeftSkillElement.forEach((element, index) =>{
-    element.style.display = (index < 2) ? 'flex' : 'none'
+    if(index < 2){
+        element.classList.add('show')
+    }
 })
 
 loadMore.addEventListener('click', ()=>{
     const containerLeftSkillElement2 = containerLeftSkillElement.slice(2)
-    if(containerLeftSkillElement2[0].style.display === 'none'){
+    if(!containerLeftSkillElement2[0].classList.contains('show')){
         containerLeftSkillElement2.forEach(element =>{
-            element.style.display = 'flex'
+            element.classList.add('show')
         })
         loadMore.innerText = 'Show less'
     }
     else{
         containerLeftSkillElement2.forEach(element =>{
-            element.style.display = 'none'
+            element.classList.remove('show')
         })
         loadMore.innerText = 'Load more'
     }

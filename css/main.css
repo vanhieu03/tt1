@@ -182,8 +182,11 @@ body{
 }
 
 .container-left-skills{
-    display: flex;
+    display: none;
     margin-bottom: 50px;
+}
+.container-left-skills.show{
+    display: flex;
 }
 
 .container-left-skills-photo{
@@ -221,10 +224,10 @@ body{
 }
 
 .container-left-timeline{
-    scroll-margin-top: 100px;
+    scroll-margin-top: 50px;
     position: relative;
     margin-bottom: 100px;
-    display: flow-root;
+    /* display: flow-root; */
 }
 
 .container-left-timeline::before{
