@@ -85,6 +85,15 @@
         right: -34px;
     }
 
+    .container-challenge-wrapper-link{
+        display: block;
+        text-align: end;
+    }
+    
+    .container-challenge-wrapper-link div{
+        margin-top: 12px;
+    }
+
     .footer-wrapper {
         display: block;
     }

@@ -1,7 +1,7 @@
 const headerMenu = document.querySelector('.header-menu')
 const headerHolder = document.querySelector('.header-holder')
 const hoverUnderline = document.querySelectorAll('.hover_underline')
-
+//menu mobile
 headerMenu.addEventListener('click', ()=>{
     headerHolder.classList.toggle('active')
     headerMenu.innerHTML = headerHolder.classList.contains('active')
@@ -17,14 +17,14 @@ hoverUnderline.forEach(element=>{
     })
 })
 
-
+// headerUnderline
 window.addEventListener('scroll', () =>{
     const sections = document.querySelectorAll('div[id]');
     let currentSection = ''
     sections.forEach(section =>{
         const sectionTop = section.offsetTop
         
-        if(scrollY >= sectionTop){
+        if(scrollY >= sectionTop - 100){
             currentSection = section.getAttribute('id')
         }
         const links = document.querySelectorAll(`a`)
@@ -35,6 +35,15 @@ window.addEventListener('scroll', () =>{
             }
         })
     })
-    
-    
 })
+// Logo scrollToTop
+const headerLogoMb = document.querySelector('.header-logo')
+const headerLogoPc = document.querySelector('.container-right-logo')
+const scrollToTop = ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+}
+headerLogoMb.addEventListener('click', scrollToTop)
+headerLogoPc.addEventListener('click', scrollToTop)

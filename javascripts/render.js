@@ -1,5 +1,3 @@
-const timeline = document.querySelector('.container-left-timeline')
-timeline.classList.add('container-left-timeline')
 const timelineContent = [
     {
         time: "23/09/2024 – 5/10/2024",
@@ -59,21 +57,20 @@ const timelineContent = [
     
 ]
 
+const timelineWrapper = document.querySelector('.container-left-timelineWrapper')
+const timeline = document.createElement('div')
+// const timeline = document.querySelector('.container-left-timeline')
+timeline.classList.add('container-left-timeline')
+
 timelineContent.forEach((data, index) =>{
+    // Wrapper
     const timelineChallenge = document.createElement('div')
     timelineChallenge.classList.add('container-timeline-challenge')
     timelineChallenge.classList.add('col-2')
 
+    //Content 
     const timelineChallengeWrapper = document.createElement('div')
     timelineChallengeWrapper.classList.add('container-challenge-wrapper')
-
-    const challengLineLeft = document.createElement('div')
-    if((index + 1) % 2 !== 0){
-        challengLineLeft.classList.add('challenge-line-left')
-    }
-    else{
-        challengLineLeft.classList.add('challenge-line-right')
-    }
     timelineChallengeWrapper.innerHTML = `
         <div class="container-challenge-wrapper-number">${data.number}</div>
         <div class="container-challenge-wrapper-name">${data.name}</div>
@@ -81,11 +78,21 @@ timelineContent.forEach((data, index) =>{
             <a href="${data.link}">Link thử thách</a>
             <div>${data.time}</div>
         </div>
-    `
+        `
+    //line
+    const challengLineLeft = document.createElement('div')
+    if((index + 1) % 2 !== 0){
+        challengLineLeft.classList.add('challenge-line-left')
+    }
+    else{
+        challengLineLeft.classList.add('challenge-line-right')
+    }
+    
     timelineChallenge.appendChild(challengLineLeft)
     timelineChallenge.appendChild(timelineChallengeWrapper)
     timeline.appendChild(timelineChallenge)
 })
+timelineWrapper.appendChild(timeline)
 
 // render skill
 const skillContent = [
@@ -153,7 +160,6 @@ skillContent.forEach(data =>{
 })
 const loadMore = document.createElement('span')
 loadMore.classList.add('loadMore')
-loadMore.classList.add('hover_underline')
 loadMore.innerText = 'Load more'
 containerLeftWrapper.appendChild(loadMore)
 
