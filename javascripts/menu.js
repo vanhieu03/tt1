@@ -36,6 +36,7 @@ window.addEventListener('scroll', () =>{
         })
     })
 })
+
 // Logo scrollToTop
 const headerLogoMb = document.querySelector('.header-logo')
 const headerLogoPc = document.querySelector('.container-right-logo')

@@ -56,3 +56,6 @@ li {
 .hover_underline.active::after {
     width: 100%;
 }
+.text_underline:hover{
+    text-decoration: underline;
+}
