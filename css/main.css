@@ -39,6 +39,7 @@ body {
     transition: 0.6s ease-in;
 }
 
+
 .header-holder {
     display: none;
     position: fixed;
@@ -99,8 +100,8 @@ body {
 
 .container-left {
     width: 80%;
-    margin-left: 12px;
-    margin-right: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .container-left-info {
@@ -119,6 +120,17 @@ body {
 
 .container-info-content>div:last-child {
     margin-bottom: 0;
+}
+
+.container-info-photo{
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container-info-img{
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
 }
 
 .container-info-wrapper {
@@ -184,6 +196,129 @@ body {
     line-height: 1.8;
 }
 
+/* slider skill */
+.cLSkill{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cLSkill-wrapper{
+    width: 50%;
+}
+
+.cLSInfo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.cLSInfo-num{
+    font-size: 3rem;
+    margin-right: 12px;
+    color: #6db363;
+}
+
+.cLSInfo-fill{
+    width: 5%;
+    transition: width 0.8s ease-in;
+}
+
+.cLSInfo-fill-75.visible{
+    width: 75%;
+}
+
+.cLSInfo-fill-60.visible{
+    width: 60%;
+}
+
+.cLSInfo-fill-50.visible{
+    width: 50%;
+}
+
+.cLSInfo-content{
+    position: relative;
+    width: calc(100% - 120px);
+    height: 10px;
+    background-color: var(--primary-color);
+}
+
+.cLSInfo-text{
+    position: absolute;
+    top: 0;
+    transform: translateY(-30px);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+}
+
+.cLSInfo-fill{
+    position: absolute;
+    height: 20px;
+    top: 0;
+    transform: translateY(-25%);
+    background-color: #6db363;
+}
+
+.cLSProject{
+    width: 50%;
+}
+
+.cLSPSlider{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.cLSkill-wrapper-text{
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.cLSPSlider-content{
+    display: flex;
+    transition: transform 0.6s ease-in;
+}
+
+.cLSPSlider-content a{
+    flex: 1 0 100%;
+}
+
+.cLSPSlider-img{
+    width: 100%;
+    height: 360px;
+    object-fit: cover;  
+    border-radius: 8px; 
+}
+
+.cLSPSlider-img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in;
+}
+
+.cLSPSlider-icon{
+    position: absolute;
+    font-size: 3rem;
+    color: #d32f2f;
+    cursor: pointer;
+}
+
+.cLSPSlider-left{
+    top: 50%;
+    left: 0;
+    transform: translate(10px, -50%);
+}
+
+.cLSPSlider-right{
+    top: 50%;
+    right: 0;
+    transform: translate(-10px, -50%);
+}
+
+/* skill */
 .container-left-wrapper {
     position: relative;
     padding-top: 100px;
@@ -201,6 +336,8 @@ body {
 .container-left-skills-photo {
     flex: 0 0 65%;
     height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .container-skills-photo-img {
@@ -290,6 +427,14 @@ body {
 .container-timeline-challenge {
     position: relative;
     width: 45%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.container-timeline-challenge.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container-timeline-challenge:nth-child(2n) {
@@ -332,6 +477,92 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.tOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Đặt nền đen mờ */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.tOverlay.hidden{
+    display: flex;
+}
+
+.tOBlock {
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.tOBHeader {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.tOBName, .tOBDes, .tOBLink, .tOBTimeEsti, .tOBTimeImple {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.tOBDes {
+    font-size: 16px;
+    color: #333;
+}
+
+.tOBLink a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: underline;
+}
+
+.tOBLink a:hover {
+    color: #6db363;
+}
+
+.tOBTimeEsti, .tOBTimeImple {
+    font-size: 1.4rem;
+    color: #757575;
+    font-style: italic;
+    display: block;
+}
+
+.tOBName, .tOBTimeEsti, .tOBTimeImple {
+    font-weight: 500;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #f44336; 
+    cursor: pointer;   
+    transition: all 0.3s ease; 
+}
+
+.close-overlay:hover {
+    color: #d32f2f;
+    transform: scale(1.1);
+}
+
+/* challenge */
+
 .challenge-line-left,
 .challenge-line-right {
     position: absolute;
@@ -358,6 +589,7 @@ body {
     padding: 40px 55px 40px 40px;
     background-color: #6db363;
     color: var(--primary-color);
+    cursor: pointer;
 }
 
 .container-challenge-wrapper-number {

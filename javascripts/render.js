@@ -1,3 +1,97 @@
+// skill content
+const skillContent = [
+    {
+        img:'https://cloudoffice.com.vn/assetmanager/liveEditer/b%E1%BB%91%20c%E1%BB%A5c%20b%C3%A0i%20thuy%E1%BA%BFt%20tr%C3%ACnh.png',
+        name: 'Kỹ năng thuyết trình',
+        des: 'Khả năng truyền đạt ý tưởng một cách rõ ràng và thu hút người nghe, giúp giải thích các giải pháp kỹ thuật hoặc ý tưởng sáng tạo một cách dễ hiểu.'
+    },
+    {
+        img:'./imgs/anh2.jpeg',
+        name: 'Tư duy sáng tạo',
+        des: 'Khả năng nghĩ ra những ý tưởng mới và giải pháp độc đáo cho các vấn đề phức tạp, giúp cải thiện trải nghiệm người dùng và phát triển sản phẩm khác biệt.'
+    },
+    {
+        img:'./imgs/anh3.jpg',
+        name: 'Giải quyết vấn đề',
+        des: 'Khả năng phân tích tình huống và đưa ra các giải pháp phù hợp và hiệu quả khi gặp phải thách thức kỹ thuật hoặc tổ chức.'
+    },
+    {
+        img:'./imgs/anh4.png',
+        name: 'Tư duy logic',
+        des: 'Sự sắp xếp các suy nghĩ và hành động theo một trình tự hợp lý để xử lý các vấn đề một cách hiệu quả và có tổ chức.'
+    },
+    {
+        img:'./imgs/anh5.jpg',
+        name: 'Khả năng làm việc nhóm',
+        des: 'Khả năng phối hợp tốt với các thành viên khác trong nhóm, chia sẻ thông tin, hỗ trợ nhau để đạt được mục tiêu chung.'
+    },
+    {
+        img:'./imgs/anh6.jpg',
+        name: 'Chú ý đến chi tiết',
+        des: 'Tập trung vào các yếu tố nhỏ nhưng quan trọng, giúp phát hiện lỗi và đảm bảo chất lượng sản phẩm cuối cùng.'
+    },
+    {
+        img:'./imgs/anh7.jpg',
+        name: 'Tư duy người dùng',
+        des: 'Hiểu rõ nhu cầu và trải nghiệm của người dùng cuối để thiết kế các giao diện và tính năng dễ sử dụng, tiện lợi và trực quan.'
+    },
+    {
+        img:'./imgs/anh8.jpg',
+        name: 'Kỹ năng code',
+        des: 'Khả năng viết và tối ưu mã nguồn để xây dựng ứng dụng phần mềm hiệu quả, bao gồm việc thành thạo ngôn ngữ lập trình và sử dụng các công cụ, thuật toán phù hợp.'
+    }
+]
+
+//SKill
+const containerLeftWrapper = document.querySelector('.container-left-wrapper');
+skillContent.forEach(data =>{
+    const containerLeftSkill = document.createElement('div');
+    containerLeftSkill.classList.add('container-left-skills');
+
+    const containerLeftSkillPhoto = document.createElement('div');
+    containerLeftSkillPhoto.classList.add('container-left-skills-photo');
+    containerLeftSkillPhoto.innerHTML = `<img src="${data.img}" alt="anhloi" class="container-skills-photo-img">`;
+
+    const containerLeftSkillContent = document.createElement('div');
+    containerLeftSkillContent.classList.add('container-left-skills-content');
+    containerLeftSkillContent.innerHTML = `
+    <div class="container-skills-content-header">${data.name}</div>
+    <div class="container-skills-content-des">${data.des}</div>`;
+
+    containerLeftSkill.appendChild(containerLeftSkillPhoto);
+    containerLeftSkill.appendChild(containerLeftSkillContent);
+
+    containerLeftWrapper.appendChild(containerLeftSkill);
+})
+const loadMore = document.createElement('span');
+loadMore.classList.add('loadMore');
+loadMore.innerText = 'Load more';
+containerLeftWrapper.appendChild(loadMore);
+
+const containerLeftSkillElement = [...document.querySelectorAll('.container-left-skills')];
+containerLeftSkillElement.forEach((element, index) =>{
+    if(index < 2){
+        element.classList.add('show');
+    }
+});
+//show skill
+loadMore.addEventListener('click', ()=>{
+    const containerLeftSkillElement2 = containerLeftSkillElement.slice(2);
+    if(!containerLeftSkillElement2[0].classList.contains('show')){
+        containerLeftSkillElement2.forEach(element =>{
+            element.classList.add('show');
+        })
+        loadMore.innerText = 'Show less';
+    }
+    else{
+        containerLeftSkillElement2.forEach(element =>{
+            element.classList.remove('show');
+        })
+        loadMore.innerText = 'Load more';
+    }
+})
+
+//timline changllenge
 const timelineContent = [
     {
         number: "Tuần đầu",
@@ -160,131 +254,155 @@ const timelineContent = [
     }
 ]
 
-const timelineWrapper = document.querySelector('.container-left-timelineWrapper')
-const timeline = document.createElement('div')
-timeline.classList.add('container-left-timeline')
+const timelineWrapper = document.querySelector('.container-left-timelineWrapper');
+const timeline = document.createElement('div');
+timeline.classList.add('container-left-timeline');
 
 timelineContent.forEach((data, index) =>{
     // Wrapper
-    const timelineChallenge = document.createElement('div')
-    timelineChallenge.classList.add('container-timeline-challenge')
-    timelineChallenge.classList.add('col-2')
+    const timelineChallenge = document.createElement('div');
+    timelineChallenge.classList.add('container-timeline-challenge');
+    timelineChallenge.classList.add('col-2');
 
     //Content 
-    const timelineChallengeWrapper = document.createElement('div')
-    timelineChallengeWrapper.classList.add('container-challenge-wrapper')
+    const timelineChallengeWrapper = document.createElement('div');
+    timelineChallengeWrapper.classList.add('container-challenge-wrapper');
     timelineChallengeWrapper.innerHTML = `
         <div class="container-challenge-wrapper-number">${data.number}</div>
         <div class="container-challenge-wrapper-name">${data.name}</div>
         <div class="container-challenge-wrapper-link">
-            <a href="${data.link}">Link thử thách</a>
+            <a href="${data.link}" class="text_underline">Link thử thách</a>
             <div>${data.time}</div>
         </div>
-        `
+        `;
     //line
-    const challengLineLeft = document.createElement('div')
+    const challengLineLeft = document.createElement('div');
     if((index + 1) % 2 !== 0){
-        challengLineLeft.classList.add('challenge-line-left')
+        challengLineLeft.classList.add('challenge-line-left');
     }
     else{
-        challengLineLeft.classList.add('challenge-line-right')
+        challengLineLeft.classList.add('challenge-line-right');
     }
     
-    timelineChallenge.appendChild(challengLineLeft)
-    timelineChallenge.appendChild(timelineChallengeWrapper)
-    timeline.appendChild(timelineChallenge)
+    timelineChallenge.appendChild(challengLineLeft);
+    timelineChallenge.appendChild(timelineChallengeWrapper);
+    timeline.appendChild(timelineChallenge);
 })
-timelineWrapper.appendChild(timeline)
+timelineWrapper.appendChild(timeline);
 
-// skill content
-const skillContent = [
-    {
-        img:'https://cloudoffice.com.vn/assetmanager/liveEditer/b%E1%BB%91%20c%E1%BB%A5c%20b%C3%A0i%20thuy%E1%BA%BFt%20tr%C3%ACnh.png',
-        name: 'Kỹ năng thuyết trình',
-        des: 'Khả năng truyền đạt ý tưởng một cách rõ ràng và thu hút người nghe, giúp giải thích các giải pháp kỹ thuật hoặc ý tưởng sáng tạo một cách dễ hiểu.'
-    },
-    {
-        img:'./imgs/anh2.jpeg',
-        name: 'Tư duy sáng tạo',
-        des: 'Khả năng nghĩ ra những ý tưởng mới và giải pháp độc đáo cho các vấn đề phức tạp, giúp cải thiện trải nghiệm người dùng và phát triển sản phẩm khác biệt.'
-    },
-    {
-        img:'./imgs/anh3.jpg',
-        name: 'Giải quyết vấn đề',
-        des: 'Khả năng phân tích tình huống và đưa ra các giải pháp phù hợp và hiệu quả khi gặp phải thách thức kỹ thuật hoặc tổ chức.'
-    },
-    {
-        img:'./imgs/anh4.png',
-        name: 'Tư duy logic',
-        des: 'Sự sắp xếp các suy nghĩ và hành động theo một trình tự hợp lý để xử lý các vấn đề một cách hiệu quả và có tổ chức.'
-    },
-    {
-        img:'./imgs/anh5.jpg',
-        name: 'Khả năng làm việc nhóm',
-        des: 'Khả năng phối hợp tốt với các thành viên khác trong nhóm, chia sẻ thông tin, hỗ trợ nhau để đạt được mục tiêu chung.'
-    },
-    {
-        img:'./imgs/anh6.jpg',
-        name: 'Chú ý đến chi tiết',
-        des: 'Tập trung vào các yếu tố nhỏ nhưng quan trọng, giúp phát hiện lỗi và đảm bảo chất lượng sản phẩm cuối cùng.'
-    },
-    {
-        img:'./imgs/anh7.jpg',
-        name: 'Tư duy người dùng',
-        des: 'Hiểu rõ nhu cầu và trải nghiệm của người dùng cuối để thiết kế các giao diện và tính năng dễ sử dụng, tiện lợi và trực quan.'
-    },
-    {
-        img:'./imgs/anh8.jpg',
-        name: 'Kỹ năng code',
-        des: 'Khả năng viết và tối ưu mã nguồn để xây dựng ứng dụng phần mềm hiệu quả, bao gồm việc thành thạo ngôn ngữ lập trình và sử dụng các công cụ, thuật toán phù hợp.'
-    }
-]
+//timline scroll
 
-//timeline
-const containerLeftWrapper = document.querySelector('.container-left-wrapper')
-skillContent.forEach(data =>{
-    const containerLeftSkill = document.createElement('div')
-    containerLeftSkill.classList.add('container-left-skills')
+const checkVisibleTimeline = ()=>{
+    const timelineChallenges = document.querySelectorAll('.container-timeline-challenge');
+    timelineChallenges.forEach((challenge) => {
+        const rect = challenge.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            challenge.classList.add('visible');
+        }
+        //  else {
+        //     challenge.classList.remove('visible');
+        // }
+    });
+}
 
-    const containerLeftSkillPhoto = document.createElement('div')
-    containerLeftSkillPhoto.classList.add('container-left-skills-photo')
-    containerLeftSkillPhoto.innerHTML = `<img src="${data.img}" alt="anhloi" class="container-skills-photo-img">`
+window.addEventListener('scroll', checkVisibleTimeline);
+checkVisibleTimeline();
 
-    const containerLeftSkillContent = document.createElement('div')
-    containerLeftSkillContent.classList.add('container-left-skills-content')
-    containerLeftSkillContent.innerHTML = `
-    <div class="container-skills-content-header">${data.name}</div>
-    <div class="container-skills-content-des">${data.des}</div>`
 
-    containerLeftSkill.appendChild(containerLeftSkillPhoto)
-    containerLeftSkill.appendChild(containerLeftSkillContent)
+const checkVisibleSkill = ()=>{
+    const cLSInfoFills = document.querySelectorAll('.cLSInfo-fill');
+    cLSInfoFills.forEach(cLSInfoFill =>{
+        const rect = cLSInfoFill.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            cLSInfoFill.classList.add('visible');
+        } 
+        // else {
+        //     cLSInfoFill.classList.remove('visible');
+        // }
+    })
+}
 
-    containerLeftWrapper.appendChild(containerLeftSkill)
+window.addEventListener('scroll', checkVisibleSkill);
+checkVisibleSkill();
+// render timeline Overlay
+const tOverlay = document.querySelector('.tOverlay');
+
+const tOBlock = document.createElement('div');
+tOBlock.classList.add('tOBlock');
+
+const closeOverlay = document.createElement('span');
+closeOverlay.innerHTML =`<i class="fa-solid fa-xmark"></i>`;
+closeOverlay.classList.add('close-overlay');
+
+const tOBHeader = document.createElement('div');
+tOBHeader.classList.add('tOBHeader');
+const tOBName = document.createElement('div');
+tOBName.classList.add('tOBName');
+const tOBDes = document.createElement('div');
+tOBDes.classList.add('tOBDes');
+const tOBLink = document.createElement('div');
+tOBLink.classList.add('tOBLink');
+const tOBTimeEsti = document.createElement('div');
+tOBTimeEsti.classList.add('tOBTimeEsti');
+const tOBTimeImple = document.createElement('div');
+tOBTimeImple.classList.add('tOBTimeImple');
+
+tOBlock.appendChild(tOBHeader);
+tOBlock.appendChild(tOBName);
+tOBlock.appendChild(tOBDes);
+tOBlock.appendChild(tOBLink);
+tOBlock.appendChild(tOBTimeEsti);
+tOBlock.appendChild(tOBTimeImple);
+tOBlock.appendChild(closeOverlay);
+
+tOverlay.appendChild(tOBlock);
+
+
+const cTChallenge = document.querySelectorAll('.container-timeline-challenge');
+cTChallenge.forEach((el, i) =>{
+    el.addEventListener('click', ()=>{
+        tOverlay.classList.add('hidden'); 
+        
+        tOBHeader.innerText = timelineContent[i].number;
+        tOBName.innerText = timelineContent[i].name;
+        tOBDes.innerText = timelineContent[i].des;
+        tOBLink.innerHTML = `<a href="${timelineContent[i].link}" class="text_underline" target="_blank">Link thử thách</a>`;
+        tOBTimeEsti.innerText = `Thời gian dự kiến: ${timelineContent[i].timeEsti}`;
+        tOBTimeImple.innerText = `Thời gian hoàn thành: ${timelineContent[i].time}`;
+
+        document.body.style.overflow = 'hidden';
+    })
 })
-const loadMore = document.createElement('span')
-loadMore.classList.add('loadMore')
-loadMore.innerText = 'Load more'
-containerLeftWrapper.appendChild(loadMore)
 
-const containerLeftSkillElement = [...document.querySelectorAll('.container-left-skills')]
-containerLeftSkillElement.forEach((element, index) =>{
-    if(index < 2){
-        element.classList.add('show')
-    }
+tOverlay.addEventListener('click', ()=>{
+    tOverlay.classList.remove('hidden'); 
+    document.body.style.overflow = 'auto';
 })
-//show skill
-loadMore.addEventListener('click', ()=>{
-    const containerLeftSkillElement2 = containerLeftSkillElement.slice(2)
-    if(!containerLeftSkillElement2[0].classList.contains('show')){
-        containerLeftSkillElement2.forEach(element =>{
-            element.classList.add('show')
-        })
-        loadMore.innerText = 'Show less'
-    }
-    else{
-        containerLeftSkillElement2.forEach(element =>{
-            element.classList.remove('show')
-        })
-        loadMore.innerText = 'Load more'
-    }
+
+tOBlock.addEventListener('click', e=>{
+    e.stopPropagation();
+})
+
+closeOverlay.addEventListener('click', e=>{
+    tOverlay.classList.remove('hidden'); 
+    document.body.style.overflow = 'auto';
+})
+
+//slider
+const sContent = document.querySelector('.cLSPSlider-content');
+const sImg = document.querySelectorAll('.cLSPSlider-img');
+const widthImg = sImg[0].offsetWidth;
+const lengthImg = sImg.length;
+let currentIndex = 0;
+const sliderShow = ()=>{
+    // A % B (nếu A < B thì A % B = A)
+    currentIndex = (currentIndex + 1) % lengthImg;
+    sContent.style.transform = `translateX(${-widthImg * currentIndex}px)`;
+}
+// sImg[currentIndex].classList.add('active');
+setInterval(sliderShow, 5000);
+const cLSPSliderIcon = document.querySelectorAll('.cLSPSlider-icon');
+
+cLSPSliderIcon.forEach(el =>{
+    el.addEventListener('click', sliderShow);
 })

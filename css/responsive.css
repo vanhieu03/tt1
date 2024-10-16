@@ -46,6 +46,22 @@
     .container-info-content {
         padding-left: 24px;
     }
+    
+    .container-info-photo{
+        margin-top: 50px;
+    }
+
+    .cLSkill{
+        display: block;
+    }
+
+    .cLSkill-wrapper{
+        width: 100%;
+    }
+
+    .cLSProject{
+        width: 100%;
+    }
 
     .container-left-skills.show{
         display: block;
@@ -92,6 +108,16 @@
     
     .container-challenge-wrapper-link div{
         margin-top: 12px;
+    }
+
+    .tOBlock{
+        width: 100%;
+        height: 100%;
+    }
+
+    .close-overlay{
+        top: 30px;
+        right: 30px;
     }
 
     .footer-wrapper {
