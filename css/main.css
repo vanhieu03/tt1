@@ -121,7 +121,7 @@ body {
     top: 0;
     left: 0;
     transform: translateY(50%);
-    color: #25252e;
+    color: #16161b;
     font-size: 4rem;
     letter-spacing: 3px;
     font-weight: 600;
@@ -299,6 +299,12 @@ body {
     border-radius: 8px;
 }
 
+.cLSPSlider:hover .cLSPSlider-icon {
+    opacity: 1;
+}
+
+
+
 .cLSPSlider-content{
     display: flex;
     transition: transform 0.6s ease-in;
@@ -325,7 +331,10 @@ body {
     font-size: 3rem;
     color: #d32f2f;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 }
+
 
 .cLSPSlider-left{
     top: 50%;

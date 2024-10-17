@@ -32,7 +32,7 @@ window.addEventListener('scroll', () =>{
         if(scrollY >= sectionTop - 100){
             currentSection = section.getAttribute('id');
         }
-        const links = document.querySelectorAll(`a`);
+        const links = document.querySelectorAll('a');
         links.forEach(link =>{
             link.classList.remove('active');
             if(link.getAttribute('href') === `#${currentSection}`){
