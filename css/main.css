@@ -39,22 +39,27 @@ body {
     transition: 0.6s ease-in;
 }
 
-
-.header-holder {
+.header-holder-wrapper{
     display: none;
     position: fixed;
+    inset: 0;
+    z-index: 998;
+}
+
+.header-holder-wrapper.active {
+    display: block;
+}
+
+.header-holder {
+    position: absolute;
     top: 65px;
     right: 0;
     width: 260px;
     height: 100%;
     overflow: auto;
     background-color: #25252e;
-    z-index: 999;
 }
 
-.header-holder.active {
-    display: block;
-}
 
 .header-holder .container-nav-menu {
     padding: 50px 30px 50px 50px;
@@ -105,8 +110,21 @@ body {
 }
 
 .container-left-info {
+    position: relative;
     display: flex;
     padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.element-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(50%);
+    color: #25252e;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 .container-info-col2 {
@@ -162,6 +180,10 @@ body {
 .container-info-content-des {
     font-size: 1.5rem;
     margin-bottom: 36px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    width: 0; 
+    animation: typing 4s steps(40, end) forwards; */
 }
 
 .container-info-content-des a {
@@ -172,6 +194,10 @@ body {
 
 .container-info-content-des a:hover {
     color: var(--hover-color);
+}
+
+.toggleButton{
+    display: none;
 }
 
 .container-info-project-content {
@@ -198,7 +224,9 @@ body {
 
 /* slider skill */
 .cLSkill{
+    position: relative;
     padding-top: 100px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -271,13 +299,6 @@ body {
     border-radius: 8px;
 }
 
-.cLSkill-wrapper-text{
-    font-size: 3rem;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-
 .cLSPSlider-content{
     display: flex;
     transition: transform 0.6s ease-in;
@@ -322,6 +343,7 @@ body {
 .container-left-wrapper {
     position: relative;
     padding-top: 100px;
+    margin-bottom: 100px;
 }
 
 .container-left-skills {
@@ -405,6 +427,7 @@ body {
 
 /* Timline */
 .container-left-timelineWrapper {
+    position: relative;
     padding-top: 100px;
 }
 

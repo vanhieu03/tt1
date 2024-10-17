@@ -40,7 +40,7 @@ const skillContent = [
         name: 'Kỹ năng code',
         des: 'Khả năng viết và tối ưu mã nguồn để xây dựng ứng dụng phần mềm hiệu quả, bao gồm việc thành thạo ngôn ngữ lập trình và sử dụng các công cụ, thuật toán phù hợp.'
     }
-]
+];
 
 //SKill
 const containerLeftWrapper = document.querySelector('.container-left-wrapper');
@@ -62,11 +62,17 @@ skillContent.forEach(data =>{
     containerLeftSkill.appendChild(containerLeftSkillContent);
 
     containerLeftWrapper.appendChild(containerLeftSkill);
-})
+});
 const loadMore = document.createElement('span');
 loadMore.classList.add('loadMore');
 loadMore.innerText = 'Load more';
 containerLeftWrapper.appendChild(loadMore);
+
+const elementTitle = document.createElement('div');
+elementTitle.innerText = "Kỹ năng mong muốn";
+elementTitle.classList.add('element-title');
+
+containerLeftWrapper.appendChild(elementTitle);
 
 const containerLeftSkillElement = [...document.querySelectorAll('.container-left-skills')];
 containerLeftSkillElement.forEach((element, index) =>{
@@ -80,16 +86,16 @@ loadMore.addEventListener('click', ()=>{
     if(!containerLeftSkillElement2[0].classList.contains('show')){
         containerLeftSkillElement2.forEach(element =>{
             element.classList.add('show');
-        })
+        });
         loadMore.innerText = 'Show less';
     }
     else{
         containerLeftSkillElement2.forEach(element =>{
             element.classList.remove('show');
-        })
+        });
         loadMore.innerText = 'Load more';
     }
-})
+});
 
 //timline changllenge
 const timelineContent = [
@@ -252,7 +258,7 @@ const timelineContent = [
         timeEsti: "04 ngày (32 giờ)",
         time: "Update"
     }
-]
+];
 
 const timelineWrapper = document.querySelector('.container-left-timelineWrapper');
 const timeline = document.createElement('div');
@@ -287,8 +293,13 @@ timelineContent.forEach((data, index) =>{
     timelineChallenge.appendChild(challengLineLeft);
     timelineChallenge.appendChild(timelineChallengeWrapper);
     timeline.appendChild(timelineChallenge);
-})
+});
 timelineWrapper.appendChild(timeline);
+
+const titleTimeline = document.createElement('div');
+titleTimeline.innerText = "Thử thách I&E";
+titleTimeline.classList.add('element-title');
+timelineWrapper.appendChild(titleTimeline);
 
 //timline scroll
 
@@ -303,7 +314,7 @@ const checkVisibleTimeline = ()=>{
         //     challenge.classList.remove('visible');
         // }
     });
-}
+};
 
 window.addEventListener('scroll', checkVisibleTimeline);
 checkVisibleTimeline();
@@ -319,8 +330,8 @@ const checkVisibleSkill = ()=>{
         // else {
         //     cLSInfoFill.classList.remove('visible');
         // }
-    })
-}
+    });
+};
 
 window.addEventListener('scroll', checkVisibleSkill);
 checkVisibleSkill();
@@ -371,22 +382,22 @@ cTChallenge.forEach((el, i) =>{
         tOBTimeImple.innerText = `Thời gian hoàn thành: ${timelineContent[i].time}`;
 
         document.body.style.overflow = 'hidden';
-    })
-})
+    });
+});
 
 tOverlay.addEventListener('click', ()=>{
     tOverlay.classList.remove('hidden'); 
     document.body.style.overflow = 'auto';
-})
+});
 
 tOBlock.addEventListener('click', e=>{
     e.stopPropagation();
-})
+});
 
 closeOverlay.addEventListener('click', e=>{
     tOverlay.classList.remove('hidden'); 
     document.body.style.overflow = 'auto';
-})
+});
 
 //slider
 const sContent = document.querySelector('.cLSPSlider-content');
@@ -398,11 +409,11 @@ const sliderShow = ()=>{
     // A % B (nếu A < B thì A % B = A)
     currentIndex = (currentIndex + 1) % lengthImg;
     sContent.style.transform = `translateX(${-widthImg * currentIndex}px)`;
-}
+};
 // sImg[currentIndex].classList.add('active');
 setInterval(sliderShow, 5000);
 const cLSPSliderIcon = document.querySelectorAll('.cLSPSlider-icon');
 
 cLSPSliderIcon.forEach(el =>{
     el.addEventListener('click', sliderShow);
-})
+});

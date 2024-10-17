@@ -1,3 +1,8 @@
+@media only screen and (min-width:64em){
+    .header-holder.active{
+        display: none;
+    }
+}
 /* tablet < 1024px */
 @media only screen and (max-width:64em) {
     .header {
@@ -6,15 +11,18 @@
 
     .container-left {
         width: 100%;
+        padding: 0 36px;
     }
 
     .container-right {
         display: none;
     }
+    .container-left-info {
+        margin-top: 80px;
+    }
+    
 }
 
-/* tablet < 1024px */
-@media only screen and (min-width: 46.25em) and (max-width:64em) {}
 
 /* Tablet mini: < 768px */
 @media only screen and (min-width: 46.25em) and (max-width:64em) {
@@ -26,13 +34,27 @@
         margin-top: 12px;
         text-align: end;
     }
+    .container-info-content{
+        padding: 0;
+    }
+
+    .container-info-wrapper{
+        padding-right: 0;
+    }
 }
+
 
 /* mobile < 740px */
 
-@media only screen and (max-width: 46.25em) {
+@media only screen and (max-width: 46.1875em) {
+    .element-title{
+        font-size: 3rem;
+    }
+    
     .container-left-info {
         display: block;
+        margin-top: 80px;
+        padding-top: 80px;
     }
 
     .container-info-col2 {
@@ -63,8 +85,16 @@
         width: 100%;
     }
 
+    .cLSInfo-content{
+        width: 100%;
+    }
+
     .container-left-skills.show{
         display: block;
+    }
+
+    .container-left-skills-content{
+        padding-right: 24px;
     }
 
     .container-left-skills-photo {
@@ -127,5 +157,11 @@
     .footer-info {
         width: 100%;
         margin-bottom: 36px;
+    }
+}
+
+@media only screen and (max-width: 24.375em) {
+    .element-title {
+        font-size: 2.8rem;
     }
 }
