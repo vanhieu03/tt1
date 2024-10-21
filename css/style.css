@@ -2,6 +2,7 @@
     --back-color: #323238;
     --primary-color: #fff;
     --hover-color: #5d9755;
+    --header-color: rgb(236, 35, 36);
 }
 
 * {
@@ -45,7 +46,7 @@ li {
     right: 0;
     width: 0;
     height: 3px;
-    background-color: #6db363;
+    background-color: #EC2324;
     transition: width 0.3s ease-in;
 }
 

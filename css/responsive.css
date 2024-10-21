@@ -57,16 +57,12 @@
         padding-top: 80px;
     }
 
-    .container-info-col2 {
+    .container-info-col2,.container-info-col1 {
         width: 100%;
     }
 
     .container-info-wrapper {
         padding-right: 0;
-    }
-
-    .container-info-content {
-        padding-left: 24px;
     }
     
     .container-info-photo{
@@ -146,8 +142,8 @@
     }
 
     .close-overlay{
-        top: 30px;
-        right: 30px;
+        top: 45px;
+        right: 25px;
     }
 
     .footer-wrapper {

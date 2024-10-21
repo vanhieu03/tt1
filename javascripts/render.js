@@ -65,7 +65,7 @@ skillContent.forEach(data =>{
 });
 const loadMore = document.createElement('span');
 loadMore.classList.add('loadMore');
-loadMore.innerText = 'Load more';
+loadMore.innerText = 'Xem thêm';
 containerLeftWrapper.appendChild(loadMore);
 
 const elementTitle = document.createElement('div');
@@ -87,13 +87,13 @@ loadMore.addEventListener('click', ()=>{
         containerLeftSkillElement2.forEach(element =>{
             element.classList.add('show');
         });
-        loadMore.innerText = 'Show less';
+        loadMore.innerText = 'Thu lại';
     }
     else{
         containerLeftSkillElement2.forEach(element =>{
             element.classList.remove('show');
         });
-        loadMore.innerText = 'Load more';
+        loadMore.innerText = 'Xem thêm';
     }
 });
 
@@ -277,9 +277,10 @@ timelineContent.forEach((data, index) =>{
         <div class="container-challenge-wrapper-number">${data.number}</div>
         <div class="container-challenge-wrapper-name">${data.name}</div>
         <div class="container-challenge-wrapper-link">
-            <a href="${data.link}" class="text_underline">Link thử thách</a>
+            <a href="${data.link}" class="text_underline" target="_blank">Link thử thách</a>
             <div>${data.time}</div>
         </div>
+        <div class="readMore"><button class="btn-readmore">Xem thêm</button></div>
         `;
     //line
     const challengLineLeft = document.createElement('div');
@@ -300,6 +301,21 @@ const titleTimeline = document.createElement('div');
 titleTimeline.innerText = "Thử thách I&E";
 titleTimeline.classList.add('element-title');
 timelineWrapper.appendChild(titleTimeline);
+
+const textUnderline = document.querySelectorAll('.text_underline');
+const warn = document.querySelector('.warn');
+textUnderline.forEach( el=>{
+    el.addEventListener('click', (e)=>{
+        if(!el.getAttribute('href')){
+            e.preventDefault();
+            warn.classList.add('active');
+            setTimeout(() => {
+                warn.classList.remove('active');
+            }, 5000); 
+        }
+    })
+})
+
 
 //timline scroll
 
@@ -369,18 +385,16 @@ tOBlock.appendChild(closeOverlay);
 tOverlay.appendChild(tOBlock);
 
 
-const cTChallenge = document.querySelectorAll('.container-timeline-challenge');
-cTChallenge.forEach((el, i) =>{
+const btnReadmore = document.querySelectorAll('.btn-readmore');
+btnReadmore.forEach((el, i) =>{
     el.addEventListener('click', ()=>{
         tOverlay.classList.add('hidden'); 
-        
         tOBHeader.innerText = timelineContent[i].number;
         tOBName.innerText = timelineContent[i].name;
         tOBDes.innerText = timelineContent[i].des;
         tOBLink.innerHTML = `<a href="${timelineContent[i].link}" class="text_underline" target="_blank">Link thử thách</a>`;
         tOBTimeEsti.innerText = `Thời gian dự kiến: ${timelineContent[i].timeEsti}`;
         tOBTimeImple.innerText = `Thời gian hoàn thành: ${timelineContent[i].time}`;
-
         document.body.style.overflow = 'hidden';
     });
 });
@@ -411,9 +425,25 @@ const sliderShow = ()=>{
     sContent.style.transform = `translateX(${-widthImg * currentIndex}px)`;
 };
 // sImg[currentIndex].classList.add('active');
-setInterval(sliderShow, 5000);
+let idItval;
+const startSlider = ()=>{
+    idItval= setInterval(sliderShow, 5000);
+}
+
+const stopSlider = ()=>{
+    clearInterval(idItval);
+}
+startSlider();
+sImg.forEach(img => {
+    img.addEventListener('mouseenter', stopSlider);
+    img.addEventListener('mouseleave', startSlider);
+});
 const cLSPSliderIcon = document.querySelectorAll('.cLSPSlider-icon');
 
-cLSPSliderIcon.forEach(el =>{
-    el.addEventListener('click', sliderShow);
+cLSPSliderIcon.forEach(el => {
+    el.addEventListener('click', () => {
+        stopSlider();
+        sliderShow();
+        startSlider();
+    });
 });
